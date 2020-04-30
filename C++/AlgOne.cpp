@@ -22,13 +22,13 @@ int main(){
 
   populateVectors(); 
 
-  vector<int> sortedIntA = intSum(intA, dblA); 
-  vector<int> sortedIntB = intSum(intB, dblB);
-  vector<int> sortedIntC = intSum(intC, dblC); 
+  vector<int> sortedIntA = intSort(intA, dblA); 
+  vector<int> sortedIntB = intSort(intB, dblB);
+  vector<int> sortedIntC = intSort(intC, dblC); 
 
-  vector<double> sortedDblA = doubleSum(intA, dblA); 
-  vector<double> sortedDblB = doubleSum(intB, dblB); 
-  vector<double> sortedDblC = doubleSum(intC, dblC); 
+  vector<double> sortedDblA = doubleSort(intA, dblA); 
+  vector<double> sortedDblB = doubleSort(intB, dblB); 
+  vector<double> sortedDblC = doubleSort(intC, dblC); 
   
 }
 
@@ -53,7 +53,7 @@ void populateVectors(){
 vector<int> intSort(vector<int> a, vector<double> b){
   
   vector<int> sortedVect(a.size()*2); 
-  vector<double> tempDblVec(b.size()); 
+  vector<double> tempDblVect(b.size()); 
   int k = 0;
 
   for(int i = 0; i < b.size(); i++){
@@ -72,7 +72,7 @@ vector<int> intSort(vector<int> a, vector<double> b){
       if(sortedVect.at(j) > sortedVect.at(j+1)){
         int temp = sortedVect.at(j); 
         sortedVect.at(j) = sortedVect.at(j+1); 
-        sortedVect(j+1) = temp; 
+        sortedVect.at(j+1) = temp; 
       }
     }
   }
@@ -83,7 +83,7 @@ vector<int> intSort(vector<int> a, vector<double> b){
 vector<double> doubleSort(vector<int> a, vector<double> b){
 
   vector<double> sortedVect(a.size()*2); 
-  vector<int> tempIntVec(b.size())
+  vector<int> tempIntVect(b.size()); 
   int k = 0;
 
   for(int i = 0; i < a.size(); ++i){
@@ -103,7 +103,7 @@ vector<double> doubleSort(vector<int> a, vector<double> b){
       if(sortedVect.at(j) > sortedVect.at(j+1)){
         double temp = sortedVect.at(j); 
         sortedVect.at(j) = sortedVect.at(j+1); 
-        sortedVect(j+1) = temp; 
+        sortedVect.at(j+1) = temp; 
       }
     }
   }
