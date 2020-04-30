@@ -1,4 +1,4 @@
-# type_comparisons
+# Type Comparisons
 
 ## CS 4080 Concepts of Programming Languages 
 
