@@ -1,13 +1,12 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include <math.h> 
 
 using namespace std;
 
-vector<int> one(10); 
-vector<int> two(50); 
-vector<int> three(100); 
+vector<int> intA(10); 
+vector<int> intB(50); 
+vector<int> intC(100); 
 
 vector<double> dblA(10); 
 vector<double> dblB(50); 
@@ -26,33 +25,33 @@ int main(){
 
   populateVectors(); 
 
-  vector<int> sumIntOne = intSum(one, dblA, dblD); 
-  vector<int> sumIntTwo = intSum(two, dblB, dblE);
-  vector<int> sumInThree = intSum(three, dblC, dblF); 
+  vector<int> sumIntA = intSum(intA, dblA, dblD); 
+  vector<int> sumIntB = intSum(intB, dblB, dblE);
+  vector<int> sumIntC = intSum(intC, dblC, dblF); 
 
-  vector<double> sumDblOne = doubleSum(one, dblA, dblD); 
-  vector<double> sumDblTwo = doubleSum(two, dblB, dblE); 
-  vector<double> sumDblThree = doubleSum(three, dblC, dblF); 
+  vector<double> sumDblA = doubleSum(intA, dblA, dblD); 
+  vector<double> sumDblB = doubleSum(intB, dblB, dblE); 
+  vector<double> sumDblC = doubleSum(intC, dblC, dblF); 
 
 }
 
 void populateVectors(){
-  for(int index = 0; index < 10; ++index){
-    one.at(index) = random(); 
-    dblA.at(index) = ((double)random()/RAND_MAX)* 1000000; 
-    dblD.at(index) = ((double)random()/RAND_MAX)* 1000000; 
+  for(int i = 0; i < 10; ++i){
+    intA.at(i) = random(); 
+    dblA.at(i) = ((double)random()/RAND_MAX)* 1000000; 
+    dblD.at(i) = ((double)random()/RAND_MAX)* 1000000; 
   }
 
-  for(int index = 0; index < 50; ++index){
-    two.at(index) = random(); 
-    dblB.at(index) = ((double)random()/RAND_MAX)* 1000000; 
-    dblE.at(index) = ((double)random()/RAND_MAX)* 1000000; 
+  for(int i = 0; i < 50; ++i){
+    intB.at(i) = random(); 
+    dblB.at(i) = ((double)random()/RAND_MAX)* 1000000; 
+    dblE.at(i) = ((double)random()/RAND_MAX)* 1000000; 
   }
 
-  for(int index = 0; index < 100; ++index){
-    three.at(index) = random(); 
-    dblC.at(index) = ((double)random()/RAND_MAX)* 1000000; 
-    dblF.at(index) = ((double)random()/RAND_MAX)* 1000000; 
+  for(int i = 0; i < 100; ++i){
+    intC.at(i) = random(); 
+    dblC.at(i) = ((double)random()/RAND_MAX)* 1000000; 
+    dblF.at(i) = ((double)random()/RAND_MAX)* 1000000; 
   }
 }
 
@@ -62,9 +61,9 @@ vector<int> intSum(vector<int> a, vector<double> b, vector<double> c){
   vector<double> d(a.size()); 
   vector<double> e(a.size()); 
 
-  for(int index = 0; index < a.size(); ++index){
-    d.at(index) = (int)b.at(index); 
-    e.at(index) = (int)c.at(index); 
+  for(int i = 0; i < a.size(); ++i){
+    d.at(i) = (int)b.at(i); 
+    e.at(i) = (int)c.at(i); 
   }
 
   for(int i = 0; i < a.size(); ++i){
@@ -81,8 +80,8 @@ vector<double> doubleSum(vector<int> a, vector<double> b, vector<double> c){
   vector<double> finalSum(a.size()); 
   vector<int> d(a.size()); 
 
-  for(int index = 0; index < a.size(); ++index)
-    d.at(index) = (double)a.at(index); 
+  for(int i = 0; i < a.size(); ++i)
+    d.at(i) = (double)a.at(i); 
 
   for(int i = 0; i < a.size(); ++i){
     //-a^2 + (b^2+c^2-4ac)/(2ac + cab)
