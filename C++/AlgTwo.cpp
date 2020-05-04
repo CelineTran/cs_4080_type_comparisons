@@ -42,12 +42,12 @@ void sum(vector<double> vectA, vector<double> vectB, vector<double> vectC){
     int e = (int)vectB.at(i); 
     int f = (int)vectC.at(i);
  
-    dblSum.at(i) = (-1 * (a * a) + ((b * b) + (c * c) - 4 * a * c)/(2 * a * c + c * a * b));
-    intSum.at(i) = int((-1 *(d * d)) + (e * e + f * f - 4 * d * f)/(2 * d * f + f * d * e)); 
+    dblSum.at(i) = (-1)*(a*a)+(b*b+c*c-4*a*c)/(2*a*c+c*a*b);
+    intSum.at(i) = (int)(-1)*(d*d)+(e*e+f*f-4*d*f)/(2*d*f+f*d*e); 
     
     cout << "Original Value: " << dblSum.at(i) << endl; 
     cout << "Pre-Typecasted Value: " << intSum.at(i) << endl;
-    cout << "Difference: " << abs(dblSum.at(i) - intSum.at(i)) << endl << endl; 
+    cout << "Difference: " << abs(dblSum.at(i) - intSum.at(i)) << endl << endl;
   }
 }
 
