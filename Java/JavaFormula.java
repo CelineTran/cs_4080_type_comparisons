@@ -6,59 +6,56 @@ public class JavaImplementation2 {
 		
 		Random rng = new Random();
 		
-		int[] intArray10 = new int[10];
-		int[] intArray50 = new int[50];
-		int[] intArray100 = new int[100];
-		
-		double[] dblArrayA10 = new double[10];
-		double[] dblArrayA50 = new double[50];
+
 		double[] dblArrayA100 = new double[100];
 		
-		double[] dblArrayB10 = new double[10];
-		double[] dblArrayB50 = new double[50];
 		double[] dblArrayB100 = new double[100];
 		
-		for (int i = 0; i < 10; i++) {
-			intArray10[i] = rng.nextInt(1000);
-			dblArrayA10[i] = 1000 * rng.nextDouble();
-			dblArrayB10[i] = 1000 * rng.nextDouble();
+		double[] dblArrayC100 = new double[100];
+		
+		
+		
+		
+		
+		for (int i = 0; i < 100; i++) {
+			
+			dblArrayA100[i] = 1000 * rng.nextDouble();
+			dblArrayB100[i] = 1000 * rng.nextDouble();
+			dblArrayC100[i] = 1000 * rng.nextDouble();
 			
 		}
 		
-		for (int i = 0; i < 50; i++) {
-			intArray50[i] = rng.nextInt(1000);
-			dblArrayA50[i] = 1000 * rng.nextDouble();
-			dblArrayB50[i] = 1000 * rng.nextDouble();
-			
+		int[] intSumArray100 = intSum(dblArrayA100, dblArrayB100, dblArrayC100);
+		
+		double[] dblSumArray100 = dblSum(dblArrayA100, dblArrayB100, dblArrayC100);
+		
+		double[] difference = new double[100];
+		
+		for (int i = 0; i < 100; i++) {
+			double temp = intSumArray100[i] - dblSumArray100[i];
+			difference[i] = Math.abs(temp);
 		}
 		
 		for (int i = 0; i < 100; i++) {
-			intArray100[i] = rng.nextInt(1000);
-			dblArrayA100[i] = 1000 * rng.nextDouble();
-			dblArrayB100[i] = 1000 * rng.nextDouble();
-			
+			System.out.println("Original Value: " + dblSumArray100[i]);
+			System.out.println("Typecasted Value: " + intSumArray100[i]);
+			System.out.println("Difference: " + difference[i]);
+			System.out.println(" ");
 		}
-		
-		int[] intSumArray10 = intSum(intArray10, dblArrayA10, dblArrayB10);
-		int[] intSumArray50 = intSum(intArray50, dblArrayA50, dblArrayB50);
-		int[] intSumArray100 = intSum(intArray100, dblArrayA100, dblArrayB100);
-		
-		double[] dblSumArray10 = dblSum(intArray10, dblArrayA10, dblArrayB10);
-		double[] dblSumArray50 = dblSum(intArray50, dblArrayA50, dblArrayB50);
-		double[] dblSumArray100 = dblSum(intArray100, dblArrayA100, dblArrayB100);
-		
-		
 		
 	}
 	
-	public static int[] intSum(int[] a, double[] dblArr1, double[] dblArr2) {
-		int[] sumArr = new int[a.length];
+	public static int[] intSum( double[] dblArr1, double[] dblArr2, double[] dblArr3) {
+		int[] sumArr = new int[dblArr1.length];
 		int[] b = new int[dblArr1.length];
 		int[] c = new int[dblArr2.length];
+		int[] a = new int[dblArr3.length];
 		
 		for (int i = 0; i < b.length; i++) {
-			b[i] = (int)dblArr1[i];
-			c[i] = (int)dblArr2[i];
+			
+			a[i] = (int)dblArr1[i];
+			b[i] = (int)dblArr2[i];
+			c[i] = (int)dblArr3[i];
 		}
 		
 		
@@ -69,14 +66,9 @@ public class JavaImplementation2 {
 		return sumArr;
 	}
 	
-	public static double[] dblSum(int[] intArr, double[] b, double[] c) {
+	public static double[] dblSum(double[] a, double[] b, double[] c) {
 		double[] sumArr = new double[b.length];
-		double[] a = new double[intArr.length];
 		
-		
-		for (int i = 0; i < b.length; i++) {
-			a[i] = (double)intArr[i];
-		}
 		
 		
 		for(int i = 0; i < sumArr.length; i++) {
