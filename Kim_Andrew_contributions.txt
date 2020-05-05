@@ -1,0 +1,6 @@
+Research
+Abstract
+Introduction
+Algorithm brainstorming
+Java Implementation
+Finding Sources
