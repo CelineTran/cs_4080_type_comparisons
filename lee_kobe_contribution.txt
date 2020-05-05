@@ -1,0 +1,9 @@
+Contributions: 
+- Designed algorithms for implementation
+- Python Implementation 
+- Formatting of results of algorithm
+- Experiments, Methods, Algorithm sections within the PowerPoint and Paper
+- Analyzed type coercion and "duck type" within Python language specificially
+- Created and formatted Github project
+- Divided team responsibilities into equal parts
+- Experiment result findings related to Python
