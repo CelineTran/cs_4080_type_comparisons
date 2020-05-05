@@ -207,7 +207,7 @@ def mix4():
     avgTime += temp
 
 avgTime = 0.0
-print("With Type Coercion -- ")
+print("With Type Conversion -- ")
 for i in range(0,10): # Run trial 100 times
     coercion1()
 avgTime = avgTime/10.0
@@ -228,7 +228,7 @@ for i in range(0,10): # Run trial 100 times
 avgTime = avgTime/10.0
 print(f"Average time of 10 trials of size 1000 is {avgTime:0.5f} seconds")
 
-print("Without Type Coercion (Original List) -- ")
+print("Without Type Conversion (Original List) -- ")
 avgTime = 0.0
 for i in range(0,10): # Run trial 100 times
     orig1()
@@ -250,7 +250,7 @@ for i in range(0,10): # Run trial 100 times
 avgTime = avgTime/10.0
 print(f"Average time of 10 trials of size 1000 is {avgTime:0.5f} seconds")
 
-print("With Mixed Types -- ")
+print("With Mixed Types (Type Coercion) -- ")
 avgTime = 0.0
 for i in range(0,10): # Run trial 100 times
     mix1()
