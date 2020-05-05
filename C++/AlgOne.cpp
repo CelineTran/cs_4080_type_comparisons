@@ -34,17 +34,17 @@ int main(){
   populateVectors(); 
 
   
-  cout << "With Type Coercion -- " << endl; 
+  cout << "With Type Conversion -- " << endl; 
   cout << "Average time of 10 trials of size 250 is " << intTimeTrial(dbl1)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 500 is " << intTimeTrial(dbl2)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 750 is " << intTimeTrial(dbl3)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 1000 is " << intTimeTrial(dbl4)/CLOCKS_PER_SEC << " seconds" << endl;
-  cout << "Without Type Coercion -- " << endl; 
+  cout << "Without Type Conversion -- " << endl; 
   cout << "Average time of 10 trials of size 250 is " << dblTimeTrial(dbl1)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 500 is " << dblTimeTrial(dbl2)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 750 is " << dblTimeTrial(dbl3)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 1000 is " << dblTimeTrial(dbl4)/CLOCKS_PER_SEC << " seconds" << endl; 
-  cout << "With Mixed Types -- " << endl; 
+  cout << "With Mixed Types (Type Coersion) --" << endl; 
   cout << "Average time of 10 trials of size 250 is " << mixedTimeTrial(intA, dblA)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 500 is " << mixedTimeTrial(intB, dblB)/CLOCKS_PER_SEC << " seconds" << endl; 
   cout << "Average time of 10 trials of size 750 is " << mixedTimeTrial(intC, dblC)/CLOCKS_PER_SEC << " seconds" << endl; 
@@ -121,11 +121,9 @@ void mixedSort(vector<int> a, vector<double> b){
   for(int i = 0; i < a.size(); ++i)
     tempVect.at(i) = a.at(i); 
 
-  int k = a.size(); 
-  for(int i = 0; i < b.size(); ++i){
+  for(int i = 0, k = a.size(); i < b.size(); ++i, ++k)
     tempVect.at(k) = b.at(i); 
-    k++; 
-  }
+  
 
   for(int i = 0; i < tempVect.size()-1; ++i){
     for(int j = 0; j < tempVect.size() - i - 1; ++j){
@@ -136,6 +134,12 @@ void mixedSort(vector<int> a, vector<double> b){
       }
     }
   }
+
+  /*for(int i = 0; i < tempVect.size(); ++i){
+    cout.precision(12); 
+    cout << tempVect.at(i) << endl;
+  }
+  */
   
 }
 
