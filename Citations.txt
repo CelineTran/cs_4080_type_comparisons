@@ -1,0 +1,12 @@
+Citations
+
+Code References --
+https://www.geeksforgeeks.org/bubble-sort/ --> bubble sort algorithm
+
+Paper References -- 
+
+G. D. Plotkin, "Type theory and recursion," [1993] Proceedings Eighth Annual IEEE Symposium on Logic in Computer Science, Montreal, Quebec, Canada, 1993, pp. 374-, doi: 10.1109/LICS.1993.287571.
+M. Abadi, L. Cardelli, B. C. Pierce, and G. D. Plotkin. Dynamic typing in a statically-typed language. In phPOPL, pages 213--227, 1989
+M. Salib. Starkiller: A static type inferencer and compiler for python. In Master’s thesis, MIT, 2004.M. Salib. Starkiller: A static type inferencer and compiler for python. In Master’s thesis, MIT, 2004.
+Sebesta, Robert W. Concepts of Programming Languages. 12th ed., Pearson, 2019.
+Wright, Alex. “Type Theory Comes of Age.” ACM, 1 Feb. 2010, cacm.acm.org/magazines/2010/2/69367-type-theory-comes-of-age/fulltext.
