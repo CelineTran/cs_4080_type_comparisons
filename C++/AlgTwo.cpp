@@ -4,20 +4,11 @@
 
 using namespace std;
 
-vector<int> intA(10); 
-vector<int> intB(50); 
-vector<int> intC(100); 
-
-vector<double> dblA(10); 
-vector<double> dblB(50); 
+vector<double> dblA(100); 
+vector<double> dblB(100); 
 vector<double> dblC(100); 
 
-vector<double> dblD(10); 
-vector<double> dblE(50); 
-vector<double> dblF(100); 
-
-vector<int> intSum(vector<int> a, vector<double> b, vector<double> c); 
-vector<double> doubleSum(vector<int> a, vector<double> b, vector<double> c); 
+void sum(vector<double> a, vector<double> b, vector<double> c); 
 void populateVectors(); 
 
 int main(){
@@ -25,70 +16,38 @@ int main(){
 
   populateVectors(); 
 
-  vector<int> sumIntA = intSum(intA, dblA, dblD); 
-  vector<int> sumIntB = intSum(intB, dblB, dblE);
-  vector<int> sumIntC = intSum(intC, dblC, dblF); 
-
-  vector<double> sumDblA = doubleSum(intA, dblA, dblD); 
-  vector<double> sumDblB = doubleSum(intB, dblB, dblE); 
-  vector<double> sumDblC = doubleSum(intC, dblC, dblF); 
-
+  sum(dblA, dblB, dblC); 
 }
 
 void populateVectors(){
-  for(int i = 0; i < 10; ++i){
-    intA.at(i) = random(); 
-    dblA.at(i) = ((double)random()/RAND_MAX)* 1000000; 
-    dblD.at(i) = ((double)random()/RAND_MAX)* 1000000; 
-  }
-
-  for(int i = 0; i < 50; ++i){
-    intB.at(i) = random(); 
-    dblB.at(i) = ((double)random()/RAND_MAX)* 1000000; 
-    dblE.at(i) = ((double)random()/RAND_MAX)* 1000000; 
-  }
-
   for(int i = 0; i < 100; ++i){
-    intC.at(i) = random(); 
-    dblC.at(i) = ((double)random()/RAND_MAX)* 1000000; 
-    dblF.at(i) = ((double)random()/RAND_MAX)* 1000000; 
+    dblA.at(i) = 1001 * ((double)random()/(double)RAND_MAX);  
+    dblB.at(i) = 1001 * ((double)random()/(double)RAND_MAX); 
+    dblC.at(i) = 1001 * ((double)random()/(double)RAND_MAX); 
   }
 }
 
-vector<int> intSum(vector<int> a, vector<double> b, vector<double> c){
+void sum(vector<double> vectA, vector<double> vectB, vector<double> vectC){
 
-  vector<int> finalSum(a.size()); 
-  vector<double> d(a.size()); 
-  vector<double> e(a.size()); 
+  vector<int> intSum(vectA.size()); 
+  vector<double> dblSum(vectA.size()); 
 
-  for(int i = 0; i < a.size(); ++i){
-    d.at(i) = (int)b.at(i); 
-    e.at(i) = (int)c.at(i); 
-  }
-
-  for(int i = 0; i < a.size(); ++i){
+  for(int i = 0; i < vectA.size(); ++i){
     //-a^2 + (b^2+c^2-4ac)/(2ac + cab)
-    // d = new b, e = new c
-    finalSum.at(i) = -(a.at(i) * a.at(i)) + (d.at(i)*d.at(i) + e.at(i)*e.at(i) - 4 * a.at(i) * e.at(i))/(2 * a.at(i) * e.at(i) + e.at(i) * a.at(i) * d.at(i)); 
-  }
+    // d = new a, e = new b, f = new c
+    double a = vectA.at(i); 
+    double b = vectB.at(i); 
+    double c = vectC.at(i); 
+    int d = (int)vectA.at(i); 
+    int e = (int)vectB.at(i); 
+    int f = (int)vectC.at(i);
+ 
+    dblSum.at(i) = (-1)*(a*a)+(b*b+c*c-4*a*c)/(2*a*c+c*a*b);
+    intSum.at(i) = (int)(-1)*(d*d)+(e*e+f*f-4*d*f)/(2*d*f+f*d*e); 
     
-  return finalSum; 
-}
-
-vector<double> doubleSum(vector<int> a, vector<double> b, vector<double> c){
-
-  vector<double> finalSum(a.size()); 
-  vector<int> d(a.size()); 
-
-  for(int i = 0; i < a.size(); ++i)
-    d.at(i) = (double)a.at(i); 
-
-  for(int i = 0; i < a.size(); ++i){
-    //-a^2 + (b^2+c^2-4ac)/(2ac + cab)
-    //d = new a
-    finalSum.at(i) = -(d.at(i) * d.at(i)) + (b.at(i)*b.at(i) + c.at(i)*c.at(i) - 4 * d.at(i) * c.at(i))/(2 * d.at(i) * c.at(i) + c.at(i) * d.at(i) * b.at(i)); 
+    cout << "Original Value: " << dblSum.at(i) << endl; 
+    cout << "Pre-Typecasted Value: " << intSum.at(i) << endl;
+    cout << "Difference: " << abs(dblSum.at(i) - intSum.at(i)) << endl << endl;
   }
-    
-  return finalSum; 
 }
 
