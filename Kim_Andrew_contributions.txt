@@ -1,6 +1,6 @@
 Research
 Abstract
-Introductions
+Introduction
 Algorithm brainstorming
 Java Implementation
 Finding Sources
