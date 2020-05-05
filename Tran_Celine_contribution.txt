@@ -1,3 +1,7 @@
-C++ Code 
-Future Works 
-Conclusion
+- Brainstorm algorithms to test 
+- Brainstorm mixed-type expression to test
+- C++ implemtation 
+- Analyzed strong/weak, static/dynamic type languages
+- Research other applications for type theory
+- Explore future works 
+- Formatted conclusion for Powerpoint and Report
